@@ -1,8 +1,7 @@
 def concatenate_new_value(input_list, new_value):
-
     """Return a list that is the same as the input list, but with new_value
     added on to the end.
-    
+
     Do this using list concatenation. You cannot use the append() method.
 
     For example:
@@ -13,18 +12,22 @@ def concatenate_new_value(input_list, new_value):
 
     """
 
+    input_list.append(new_value)
+    result = input_list
+
+    return result
+
     pass
 
 
 def pig_latin(word):
-
     """Given a word, return the Pig Latin version of the word. 
 
     Pig Latin Rules:
         1. If the word begins with a consonant (not a, e, i, o, u), 
            move the first letter to the end and add ‘ay’
         2. If the word begins with a vowel, add ‘yay’ to the end
-    
+
     For example:
 
     >>> pig_latin('porcupines')
@@ -32,8 +35,17 @@ def pig_latin(word):
 
     >>> pig_latin('apple')
     'appleyay'
-    
+
     """
+
+    if word[0] in ['a', 'e', 'i' 'o', 'u']:
+        return word + 'yay'
+    else:
+        word = list(word)
+        word.append(word[0])
+        del word[0]
+        word = ''.join(word)
+        return word + 'ay'
 
     pass
 
@@ -55,6 +67,11 @@ def replace_middle(input_list):
 
     """
 
+    input_list[2] = 42
+    input_list[-3] = 37
+    del input_list[3:-3]
+    return input_list
+
     pass
 
 
@@ -74,6 +91,8 @@ def delete_middle(input_list):
 
     """
 
+    del input_list[2:-2]
+
     pass
 
 
@@ -81,13 +100,18 @@ def double_with_list_comprehension(input_list):
     """Given a list of numbers, return a list with all numbers doubled. 
 
     Use a list comprehension to do this.
-    
+
     For example:
 
     >>> double_with_list_comprehension([1, 2, 3, 4, 5])
     [2, 4, 6, 8, 10]
-    
+
     """
+    result = []
+    for num in input_list:
+        result.append(num * 2)
+
+    return result
 
     pass
 
@@ -95,12 +119,21 @@ def double_with_list_comprehension(input_list):
 def multiplication_table(n):
     """ Return a multiplication table for the given number, in the form
     of a 2D array.
-    
+
     For example:
 
     >>> multiplication_table(3)
     [[1, 2, 3], [2, 4, 6], [3, 6, 9]]
-    
+
     """
+
+    result = []
+
+    for x in range(0, n):
+        result.append([])
+        for y in range(1, n + 1):
+            result[x].append(y * (x + 1))
+
+    return result
 
     pass
