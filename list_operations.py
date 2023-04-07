@@ -249,6 +249,29 @@ def sum_repeats(input_list):
     7
 
     """
+    # count_sum = 0
+    # input_list.sort()
+
+    # for i in range(1, len(input_list)):
+    #     prev = input_list[i - 1]
+    #     curr = input_list[i]
+
+    #     if count_sum == 0:
+    #         if prev == curr:
+    #             count_sum += 2
+    #         else:
+    #             count_sum += 2
+    #     else:
+    #         if prev == curr:
+    #             count_sum += 1
+    #         else:
+    #             count_sum += 1
+
+    # return count_sum
+
+    """
+    I think this question is something wrong because it means find number of list's values.
+    """
 
     return len(input_list)
 
